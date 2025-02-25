@@ -1,0 +1,14 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: base
+  namespace: kargo-guestbook
+spec:
+  subscriptions:
+  - git:
+      branch: main
+      commitSelectionStrategy: NewestFromBranch
+      discoveryLimit: 20
+      repoURL: https://github.com/<repo>
+      includePaths:
+      - base/values.yaml

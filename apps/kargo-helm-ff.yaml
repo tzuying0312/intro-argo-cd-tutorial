@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kargo-helm-ff
+spec:
+  project: kargo-helm-ff
+  source:
+    repoURL: https://github.com/<repo>
+    path: kargo
+  destination:
+    name: kargo
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
